@@ -4,7 +4,7 @@ An extension of SCNVector3 written in Swift that adds helpful functions to calcu
 
 ## What can SCNVector3Extensions do for you?
 
-It extends 'SCNVector3' sp you can do:
+It extends 'SCNVector3' so you can do:
 
 ```swift
 let v1 = SCNVector3Make(0, 1, 2)
