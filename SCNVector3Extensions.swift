@@ -82,7 +82,7 @@ extension SCNVector3
      * Calculates the cross product between two SCNVector3.
      */
     func cross(vector: SCNVector3) -> SCNVector3 {
-        return SCNVector3Make(y * vector.z - z * vector.y, z * vector.x - x * vector.y, x * vector.y - y * vector.x)
+        return SCNVector3Make(y * vector.z - z * vector.y, z * vector.x - x * vector.z, x * vector.y - y * vector.x)
     }
 }
 
@@ -212,7 +212,7 @@ func SCNVector3DotProduct(left: SCNVector3, right: SCNVector3) -> Float {
  * Calculates the cross product between two SCNVector3 vectors
  */
 func SCNVector3CrossProduct(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
-    return SCNVector3Make(left.y * right.z - left.z * right.y, left.z * right.x - left.x * right.y, left.x * right.y - left.y * right.x)
+    return SCNVector3Make(left.y * right.z - left.z * right.y, left.z * right.x - left.x * right.z, left.x * right.y - left.y * right.x)
 }
 
 /**
