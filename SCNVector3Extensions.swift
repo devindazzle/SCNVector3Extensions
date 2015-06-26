@@ -32,7 +32,7 @@ extension SCNVector3
     func negate() -> SCNVector3 {
         return self * -1
     }
-    
+
     /**
      * Negates the vector described by SCNVector3
      */
@@ -40,14 +40,14 @@ extension SCNVector3
         self = negate()
         return self
     }
-    
+
     /**
      * Returns the length (magnitude) of the vector described by the SCNVector3
      */
     func length() -> Float {
         return sqrtf(x*x + y*y + z*z)
     }
-    
+
     /**
      * Normalizes the vector described by the SCNVector3 to length 1.0 and returns
      * the result as a new SCNVector3.
@@ -55,7 +55,7 @@ extension SCNVector3
     func normalized() -> SCNVector3 {
         return self / length()
     }
-    
+
     /**
      * Normalizes the vector described by the SCNVector3 to length 1.0.
      */
@@ -63,21 +63,21 @@ extension SCNVector3
         self = normalized()
         return self
     }
-    
+
     /**
      * Calculates the distance between two SCNVector3. Pythagoras!
      */
     func distance(vector: SCNVector3) -> Float {
         return (self - vector).length()
     }
-    
+
     /**
      * Calculates the dot product between two SCNVector3.
      */
     func dot(vector: SCNVector3) -> Float {
         return x * vector.x + y * vector.y + z * vector.z
     }
-    
+
     /**
      * Calculates the cross product between two SCNVector3.
      */
@@ -89,42 +89,42 @@ extension SCNVector3
 /**
  * Adds two SCNVector3 vectors and returns the result as a new SCNVector3.
  */
-@infix func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(left.x + right.x, left.y + right.y, left.z + right.z)
 }
 
 /**
  * Increments a SCNVector3 with the value of another.
  */
-@assignment func += (inout left: SCNVector3, right: SCNVector3) {
+func += (inout left: SCNVector3, right: SCNVector3) {
     left = left + right
 }
 
 /**
  * Subtracts two SCNVector3 vectors and returns the result as a new SCNVector3.
  */
-@infix func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(left.x - right.x, left.y - right.y, left.z - right.z)
 }
 
 /**
  * Decrements a SCNVector3 with the value of another.
  */
-@assignment func -= (inout left: SCNVector3, right: SCNVector3) {
+func -= (inout left: SCNVector3, right: SCNVector3) {
     left = left - right
 }
 
 /**
  * Multiplies two SCNVector3 vectors and returns the result as a new SCNVector3.
  */
-@infix func * (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+func * (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(left.x * right.x, left.y * right.y, left.z * right.z)
 }
 
 /**
  * Multiplies a SCNVector3 with another.
  */
-@assignment func *= (inout left: SCNVector3, right: SCNVector3) {
+func *= (inout left: SCNVector3, right: SCNVector3) {
     left = left * right
 }
 
@@ -132,28 +132,28 @@ extension SCNVector3
  * Multiplies the x, y and z fields of a SCNVector3 with the same scalar value and
  * returns the result as a new SCNVector3.
  */
-@infix func * (vector: SCNVector3, scalar: Float) -> SCNVector3 {
+func * (vector: SCNVector3, scalar: Float) -> SCNVector3 {
     return SCNVector3Make(vector.x * scalar, vector.y * scalar, vector.z * scalar)
 }
 
 /**
  * Multiplies the x and y fields of a SCNVector3 with the same scalar value.
  */
-@assignment func *= (inout vector: SCNVector3, scalar: Float) {
+func *= (inout vector: SCNVector3, scalar: Float) {
     vector = vector * scalar
 }
 
 /**
  * Divides two SCNVector3 vectors abd returns the result as a new SCNVector3
  */
-@infix func / (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
+func / (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
     return SCNVector3Make(left.x / right.x, left.y / right.y, left.z / right.z)
 }
 
 /**
  * Divides a SCNVector3 by another.
  */
-@assignment func /= (inout left: SCNVector3, right: SCNVector3) {
+func /= (inout left: SCNVector3, right: SCNVector3) {
     left = left / right
 }
 
@@ -161,14 +161,14 @@ extension SCNVector3
  * Divides the x, y and z fields of a SCNVector3 by the same scalar value and
  * returns the result as a new SCNVector3.
  */
-@infix func / (vector: SCNVector3, scalar: Float) -> SCNVector3 {
+func / (vector: SCNVector3, scalar: Float) -> SCNVector3 {
     return SCNVector3Make(vector.x / scalar, vector.y / scalar, vector.z / scalar)
 }
 
 /**
  * Divides the x, y and z of a SCNVector3 by the same scalar value.
  */
-@assignment func /= (inout vector: SCNVector3, scalar: Float) {
+func /= (inout vector: SCNVector3, scalar: Float) {
     vector = vector / scalar
 }
 
