@@ -96,7 +96,7 @@ func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Increments a SCNVector3 with the value of another.
 */
-func += (inout left: SCNVector3, right: SCNVector3) {
+func += (left: inout SCNVector3, right: SCNVector3) {
 	left = left + right
 }
 
@@ -110,7 +110,7 @@ func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Decrements a SCNVector3 with the value of another.
 */
-func -= (inout left: SCNVector3, right: SCNVector3) {
+func -= (left: inout SCNVector3, right: SCNVector3) {
 	left = left - right
 }
 
@@ -124,7 +124,7 @@ func * (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Multiplies a SCNVector3 with another.
 */
-func *= (inout left: SCNVector3, right: SCNVector3) {
+func *= (left: inout SCNVector3, right: SCNVector3) {
 	left = left * right
 }
 
@@ -139,7 +139,7 @@ func * (vector: SCNVector3, scalar: Float) -> SCNVector3 {
 /**
 * Multiplies the x and y fields of a SCNVector3 with the same scalar value.
 */
-func *= (inout vector: SCNVector3, scalar: Float) {
+func *= (vector: inout SCNVector3, scalar: Float) {
 	vector = vector * scalar
 }
 
@@ -153,7 +153,7 @@ func / (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Divides a SCNVector3 by another.
 */
-func /= (inout left: SCNVector3, right: SCNVector3) {
+func /= (left: inout SCNVector3, right: SCNVector3) {
 	left = left / right
 }
 
@@ -168,7 +168,7 @@ func / (vector: SCNVector3, scalar: Float) -> SCNVector3 {
 /**
 * Divides the x, y and z of a SCNVector3 by the same scalar value.
 */
-func /= (inout vector: SCNVector3, scalar: Float) {
+func /= (vector: inout SCNVector3, scalar: Float) {
 	vector = vector / scalar
 }
 
@@ -182,7 +182,7 @@ func SCNVector3Negate(vector: SCNVector3) -> SCNVector3 {
 /**
 * Returns the length (magnitude) of the vector described by the SCNVector3
 */
-func SCNVector3Length(vector: SCNVector3) -> Float
+func SCNVector3Length(_ vector: SCNVector3) -> Float
 {
 	return sqrtf(vector.x*vector.x + vector.y*vector.y + vector.z*vector.z)
 }
@@ -204,7 +204,7 @@ func SCNVector3Normalize(vector: SCNVector3) -> SCNVector3 {
 /**
 * Calculates the dot product between two SCNVector3 vectors
 */
-func SCNVector3DotProduct(left: SCNVector3, right: SCNVector3) -> Float {
+func SCNVector3DotProduct(_ left: SCNVector3, right: SCNVector3) -> Float {
 	return left.x * right.x + left.y * right.y + left.z * right.z
 }
 
