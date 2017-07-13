@@ -36,7 +36,7 @@ extension SCNVector3
 	/**
 	* Negates the vector described by SCNVector3
 	*/
-	mutating func negated() -> SCNVector3 {
+	@discardableResult mutating func negated() -> SCNVector3 {
 		self = negate()
 		return self
 	}
@@ -59,7 +59,7 @@ extension SCNVector3
 	/**
 	* Normalizes the vector described by the SCNVector3 to length 1.0.
 	*/
-	mutating func normalize() -> SCNVector3 {
+	@discardableResult mutating func normalize() -> SCNVector3 {
 		self = normalized()
 		return self
 	}
