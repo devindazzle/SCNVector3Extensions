@@ -96,7 +96,7 @@ func + (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Increments a SCNVector3 with the value of another.
 */
-func += (inout left: SCNVector3, right: SCNVector3) {
+func += ( left: inout SCNVector3, right: SCNVector3) {
 	left = left + right
 }
 
@@ -110,7 +110,7 @@ func - (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Decrements a SCNVector3 with the value of another.
 */
-func -= (inout left: SCNVector3, right: SCNVector3) {
+func -= ( left: inout SCNVector3, right: SCNVector3) {
 	left = left - right
 }
 
@@ -124,7 +124,7 @@ func * (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Multiplies a SCNVector3 with another.
 */
-func *= (inout left: SCNVector3, right: SCNVector3) {
+func *= ( left: inout SCNVector3, right: SCNVector3) {
 	left = left * right
 }
 
@@ -139,7 +139,7 @@ func * (vector: SCNVector3, scalar: Float) -> SCNVector3 {
 /**
 * Multiplies the x and y fields of a SCNVector3 with the same scalar value.
 */
-func *= (inout vector: SCNVector3, scalar: Float) {
+func *= ( vector: inout SCNVector3, scalar: Float) {
 	vector = vector * scalar
 }
 
@@ -153,7 +153,7 @@ func / (left: SCNVector3, right: SCNVector3) -> SCNVector3 {
 /**
 * Divides a SCNVector3 by another.
 */
-func /= (inout left: SCNVector3, right: SCNVector3) {
+func /= ( left: inout SCNVector3, right: SCNVector3) {
 	left = left / right
 }
 
@@ -168,7 +168,7 @@ func / (vector: SCNVector3, scalar: Float) -> SCNVector3 {
 /**
 * Divides the x, y and z of a SCNVector3 by the same scalar value.
 */
-func /= (inout vector: SCNVector3, scalar: Float) {
+func /= ( vector: inout SCNVector3, scalar: Float) {
 	vector = vector / scalar
 }
 
@@ -191,14 +191,14 @@ func SCNVector3Length(vector: SCNVector3) -> Float
 * Returns the distance between two SCNVector3 vectors
 */
 func SCNVector3Distance(vectorStart: SCNVector3, vectorEnd: SCNVector3) -> Float {
-	return SCNVector3Length(vectorEnd - vectorStart)
+    return SCNVector3Length(vector: vectorEnd - vectorStart)
 }
 
 /**
 * Returns the distance between two SCNVector3 vectors
 */
 func SCNVector3Normalize(vector: SCNVector3) -> SCNVector3 {
-	return vector / SCNVector3Length(vector)
+    return vector / SCNVector3Length(vector: vector)
 }
 
 /**
@@ -226,7 +226,7 @@ func SCNVector3Lerp(vectorStart: SCNVector3, vectorEnd: SCNVector3, t: Float) ->
 * Project the vector, vectorToProject, onto the vector, projectionVector.
 */
 func SCNVector3Project(vectorToProject: SCNVector3, projectionVector: SCNVector3) -> SCNVector3 {
-	let scale: Float = SCNVector3DotProduct(projectionVector, right: vectorToProject) / SCNVector3DotProduct(projectionVector, right: projectionVector)
+    let scale: Float = SCNVector3DotProduct(left: projectionVector, right: vectorToProject) / SCNVector3DotProduct(left: projectionVector, right: projectionVector)
 	let v: SCNVector3 = projectionVector * scale
 	return v
 }
