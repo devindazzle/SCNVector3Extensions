@@ -1,5 +1,7 @@
 # SCNVector3Extensions
 
+Updated to Swift 5.1 - thanks to @sstadelman
+
 An extension of SCNVector3 written in Swift that adds helpful functions to calculate dot products, cross products etc. By using this extension you can do (almost) the same math on SCNVector3 as you can with a GLKVector3 using GLKit
 
 ## What can SCNVector3Extensions do for you?
